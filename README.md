@@ -2,15 +2,6 @@
 Repositry for homeworks from Projector's courses
 
 <body style="--color-main: #5452ee;--color-primary: #e73c7e;--color-secondary: #23a6d5;--color-tertiary: #ffff;background: linear-gradient(-45deg, var(--color-main), var(--color-primary), var(--color-secondary), var(--color-tertiary));background-size: 400% 400%;animation: gradient 15s ease infinite;">
-	<script>document.body.animate([
-  { 'backgroundPosition': '0% 50%;' },
-  { 'backgroundPosition': '100% 50%;' },
-	{ 'backgroundPosition': '0% 50%;' }
-], {
-	fill: "ease",
-  duration: 1500,
-  iterations: Infinity
-})</script>
 	<div class="main-wrapper" style="min-height: 500px; width: 100%; background-color: rgba(252, 255, 82, 0.7); display: flex; flex-direction: column; align-items: center;">
 		<h1 align="center">Домашні завдання від "Prjctr"</h1>
 		<div class="wrapper" style="display: flex; flex-flow: row wrap; padding: 20px 20px; box-sizing: border-box; font-size: 13px;">
