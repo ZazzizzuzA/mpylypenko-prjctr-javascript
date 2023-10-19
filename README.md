@@ -1,15 +1,17 @@
 # mpylypenko-prjctr-javascript
 Repositry for homeworks from Projector's courses
 
-
-<div style="min-height: 500px; width: 100%; background: rgb(247, 217, 136); display: flex; flex-direction: column; align-items: center;">
-	<h1 align="center">Домашні завдання від "Prjctr"</h1>
-	<div style=" display: flex; flex-flow: row wrap; padding: 20px 20px; box-sizing: border-box; font-size: 13px;">
-		<a style="line-height: 0.5; margin: 10px 0px 0px 10px; border-radius: 3px; padding: 15px 20px; background: rgb(92, 249, 171); text-decoration: none; border: 1px solid rgba(190,200,190,0.7); box-shadow: 2px 3px 5px rgb(20,20,20); color: #030147" href="01">
-      <p style="margin:0; line-height: 100%;">01. Змінні, типи даних та їх перетворення, оператори</p>
-    </a>
+<body style="background-color: rgba(8 141 255, 0.4)">
+	<style>.link{line-height: 0.5; margin: 10px 0px 0px 10px; border-radius: 3px; padding: 15px 20px; background: rgb(30, 224, 255, 0.65); text-decoration: none; border: 1px solid rgba(190,200,190,0.7); box-shadow: 2px 3px 5px rgb(20,20,20); color: #030147}.wrapper{display: flex; flex-flow: row wrap; padding: 20px 20px; box-sizing: border-box; font-size: 13px;}.main-wrapper{min-height: 500px; width: 100%; background-color: rgba(252, 255, 82, 0.7); display: flex; flex-direction: column; align-items: center;}</style>
+	<div class="main-wrapper">
+		<h1 align="center">Домашні завдання від "Prjctr"</h1>
+		<div class="wrapper">
+			<a class="link" target="_blank" href="01">
+				<p style="margin:0; line-height: 100%;">01. Змінні, типи даних та їх перетворення, оператори</p>
+			</a>
+		</div>
 	</div>
-</div>
+</body>
 
 
 ## Опис
