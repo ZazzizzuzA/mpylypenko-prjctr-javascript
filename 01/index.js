@@ -89,7 +89,7 @@ function FirstPartOfTask() {
   console.log('3. Множення:', number2 * number1);
   console.log('4. Ділення:', number1 / number2);
   console.log('5. Зведення в ступінь 5 1-ї змінної:', number1 ** 7);
-  console.log('6. Знаходження квадратного кореню 1-ї змінної:', number2 + number1);
+  console.log('6. Знаходження квадратного кореню 1-ї змінної:', Math.sqrt(number1));
 }
 
 function SecondPartOfTask() {
