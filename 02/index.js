@@ -100,7 +100,7 @@ function RunSecondTask(isManualRun = false) {
 
   function isValueValid(Value) {
     let intValue = +Value;
-    if (isNaN(intValue)) {
+    if (isNaN(intValue) || Value === '') {
       console.error('Таке чуство шо Бог десь наказує нас за шось');
       alert(`Значення "${Value}" не валідне. Спробуйте ще раз ;-)`);
       actionFunc();
