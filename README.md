@@ -8,6 +8,9 @@ Repositry for homeworks from Projector's courses
 			<a class="link" target="_blank" href="01" style="line-height: 0.5; margin: 10px 0px 0px 10px; border-radius: 3px; padding: 15px 20px; background: rgb(30, 224, 255, 0.65); text-decoration: none; border: 1px solid rgba(190,200,190,0.7); box-shadow: 2px 3px 5px rgb(20,20,20); color: #030147;">
 				<p style="margin:0; line-height: 100%;">01. Змінні, типи даних та їх перетворення, оператори</p>
 			</a>
+			<a class="link" target="_blank" href="01" style="line-height: 0.5; margin: 10px 0px 0px 10px; border-radius: 3px; padding: 15px 20px; background: rgb(30, 224, 255, 0.65); text-decoration: none; border: 1px solid rgba(190,200,190,0.7); box-shadow: 2px 3px 5px rgb(20,20,20); color: #030147;">
+				<p style="margin:0; line-height: 100%;">02. Цикли, умовні конструкції, примітивні типи даних в деталях</p>
+			</a>
 		</div>
 	</div>
 </body>

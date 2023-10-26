@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW2 — Цикли, умовні конструкції, примітивні типи даних в деталях</title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW2 — Цикли, умовні конструкції, примітивні типи даних в деталях</h1>
+    <div>
+      <h2>1</h2>
+      <div>
+        <h4>Задача</h4>
+        <p>Напишіть код який виводить в консоль значення від 1 до 100, але замість чисел кратних 3 має виводитись `Лол`,
+          замість значень кратних 5 - `Кек`, а замість значень кратних і 3, і 5 - `ЛолКек`</p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-1" cols="65" rows="13" disabled style="resize: none;"></textarea>
+          <button onclick="RunFirstTask(true)" style="max-width: 80px; margin-top: 15px;">RUN</button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-1" cols="65" rows="13" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>2</h2>
+      <div>
+        <h4>Задача</h4>
+        <p>Напишіть код який бере значення зі змінної (`value`) і виводить у консоль всі парні числа, що менші за
+          задане.
+
+          Наприклад, якщо у змінній число 10, програма має вивести наступне: 2, 4, 6, 8. Додаткові вимоги:
+          <br>
+          1. Реалізуйте рішення 2 способами: з використанням циклу `for` та `while`
+          <br>
+          2. Код має перевіряти, чи значення у змінній є числом. Якщо воно не є числом, в консоль має вивестись
+          повідомлення про помилку, наприклад `'Таке чуство шо Бог десь наказує нас за шось'`.
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>Using "while"</h5>
+          <textarea name="code-using-while" id="area-code-3" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>Using "for...let"</h5>
+          <textarea name="code-using-for" id="area-code-4" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <button onclick="RunSecondTask(true)" style="max-width: 80px; margin-top: 15px;">RUN</button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>Using "while"</h5>
+          <textarea name="result-using-while" id="area-result-3" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>Using "for...let"</h5>
+          <textarea name="result-using-for" id="area-result-4" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
