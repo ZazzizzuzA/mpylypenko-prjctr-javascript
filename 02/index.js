@@ -8,8 +8,11 @@ function ManagerHTMLElements(resultAreaId, codeAreaId) {
       return document.getElementById(this.resultAreaId);
     },
 
-    clearResultArea() {
-      this.getResultTextarea(this.resultAreaId).value = '';
+    clearResultArea(ids) {
+      this.getResultTextarea().value = '';
+      if (ids) {
+        ids.forEach(id => this.getCustomElemById(id).value = '');
+      }
       console.clear();
     },
 
@@ -98,7 +101,8 @@ function RunSecondTask(isManualRun = false) {
   function isValueValid(Value) {
     let intValue = +Value;
     if (isNaN(intValue)) {
-      alert(`Значення ${Value} не валідне. Спробуйте ще раз ;-)`);
+      console.error('Таке чуство шо Бог десь наказує нас за шось');
+      alert(`Значення "${Value}" не валідне. Спробуйте ще раз ;-)`);
       actionFunc();
       return false;
     } else if (Value === null) {
@@ -127,13 +131,12 @@ function RunSecondTask(isManualRun = false) {
         console.log('for...let', i);
         elManager.addResultInTextarea('for...let ' + i, ';\r'); // show result in summary textarea
         elManager.addResultInCustomTextarea('area-result-4', 'for...let ' + i, ';\r'); // show result in textarea for "for"
-
       }
     }
   }
 
   function actionFunc() {
-    elManager.clearResultArea();
+    elManager.clearResultArea(['area-result-3', 'area-result-4']);
     let Value = prompt('Введіть будь-яке число', '');
     let intValue = +Value;
 
