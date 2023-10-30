@@ -121,7 +121,7 @@ function RunSecondTask(isManualRun = false) {
 
     if (int < 0) {
       alert(`Введене число від'ємне: ${oddsSumm}`);
-
+      return;
     }
 
     while (int > 0) {
