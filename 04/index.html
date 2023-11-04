@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW4 — Типи даних, перетворення, умовні конструкції, масиви</title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW4 — Типи даних, перетворення, умовні конструкції, масиви</h1>
+    <div>
+      <h2>1</h2>
+      <div>
+        <h4>Задача на повернення ініціалів для кожного імені з масиву, посортованих в алфавітному порядку:</h4>
+        <p>Рішення має працювати незалежно від конкретних значень в масиві імен</p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-1" cols="65" rows="13" disabled style="resize: none;"></textarea>
+          <button onclick="RunFirstTask(true)" style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-1" cols="65" rows="13" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>2</h2>
+      <div>
+        <h4>Задача на фільтрування масиву</h4>
+        <p>Реалізуйте фільтрування імен які починаються з голосної двома способами:
+          <br>
+          1. через умовну конструкцію
+          <br>
+          2. через вбудований метод масивів
+          <br>          
+          Рішення має працювати незалежно від конкретних значень в масиві імен
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>через умовну конструкцію</h5>
+          <textarea name="code-using-while" id="area-code-2-1" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>через вбудований метод масивів</h5>
+          <textarea name="code-using-for" id="area-code-2-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <button onclick="RunSecondTask(true)" style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>через умовну конструкцію</h5>
+          <textarea name="result-using-while" id="area-result-2-1" cols="65" rows="15" disabled style="resize: none;"></textarea>
+          <h5>через вбудований метод масивів</h5>
+          <textarea name="result-using-for" id="area-result-2-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>3</h2>
+      <div>
+        <h4>Задача на розворот числа:</h4>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-3" cols="65" rows="13" disabled style="resize: none;"></textarea>
+          <button onclick="RunThirdTask(true)" style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-3" cols="65" rows="13" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>4</h2>
+      <div>
+        <h4>Задача на знаходження добутку масиву чисел з невідомою глибиною вкладеності:</h4>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-4" cols="65" rows="13" disabled style="resize: none;"></textarea>
+          <button onclick="RunFourthTask(true)" style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-4" cols="65" rows="13" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
