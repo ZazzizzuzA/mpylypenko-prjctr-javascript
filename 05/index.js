@@ -135,26 +135,28 @@ function RunSecondTask(isManualRun = false) {
 
     entries.forEach(el => {
       let key = el[0],
-          val = el[1].toString();
+          val = el[1];
 
       el[0] = key.toLowerCase();
+      el[1] = (Math.round(+val * 100) / 100).toFixed(2);
 
-      if (val.split('.')[1]) {
 
-        if (val.split('.')[1].length > 2) {
+      // if (val.split('.')[1]) {
 
-          el[1] = (Math.round(+val * 100) / 100).toString();
+      //   if (val.split('.')[1].length > 2) {
 
-        } else if (val.split('.')[1].length < 2) {
+      //     el[1] = (Math.round(+val * 100) / 100).toString();
 
-          el[1] = val + '0';
+      //   } else if (val.split('.')[1].length < 2) {
 
-        }
-      } else if (!val.split('.')[1]) {
+      //     el[1] = val + '0';
 
-        el[1] = val + '.00';
+      //   }
+      // } else if (!val.split('.')[1]) {
 
-      }      
+      //   el[1] = val + '.00';
+
+      // }
     });
 
     let result = Object.fromEntries(entries);
