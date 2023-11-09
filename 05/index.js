@@ -139,24 +139,6 @@ function RunSecondTask(isManualRun = false) {
 
       el[0] = key.toLowerCase();
       el[1] = (Math.round(+val * 100) / 100).toFixed(2);
-
-
-      // if (val.split('.')[1]) {
-
-      //   if (val.split('.')[1].length > 2) {
-
-      //     el[1] = (Math.round(+val * 100) / 100).toString();
-
-      //   } else if (val.split('.')[1].length < 2) {
-
-      //     el[1] = val + '0';
-
-      //   }
-      // } else if (!val.split('.')[1]) {
-
-      //   el[1] = val + '.00';
-
-      // }
     });
 
     let result = Object.fromEntries(entries);
