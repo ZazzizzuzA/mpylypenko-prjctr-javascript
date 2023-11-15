@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW6 — Замикання, залишкові параметри, сети</title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW6 — Замикання, залишкові параметри, сети</h1>
+    <div>
+      <h2>1</h2>
+      <div>
+        <h4>Напишіть функцію addThemAll</h4>
+        <p>Вона буде знаходити суму усіх своїх аргументів незалежно від їх кількості (але без використання вбудованого
+          об'єкту Math).
+
+          Використайте оператор розширення <br>Приклади:</p>
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+            console.log(addThemAll(2,4)); // 6
+            console.log(addThemAll(1,2,3,4)); // 10
+            console.log(addThemAll(5,5,10)); // 20
+            
+            function addThemAll // тут пишете свій код</pre>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-1" cols="65" rows="13" disabled style="resize: auto;"></textarea>
+          <button onclick="RunFirstTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-1" cols="65" rows="13" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>2</h2>
+      <div>
+        <h4>Задача на використання замикання. </h4>
+        <p>Напишіть функцію яка працює таким чином: multiply(a)(b) // a * b
+        <!-- <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+            console.log(multiply(5)(5))		// 25
+            console.log(multiply(2)(-2))	// -4
+            console.log(multiply(4)(3))		// 12
+
+            function multiply(a) {
+              // тут ваш код*
+            }
+          </pre> -->
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-2" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <button onclick="RunSecondTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>3</h2>
+      <div>
+        <h4>Напишіть функцію яка буде використовуватись для сортування масиву фільмів</h4>
+        <p>Функція буде приймати два аргумента:
+
+          — властивість за якою треба посортувати.
+
+          — опцію напрямку сортування (зростання чи спадання)
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+            const movies = [
+            {
+              movieName: 'The Thing',
+              releaseYear: 1982,
+              directedBy: 'Carpenter',
+              runningTimeInMinutes: 109,
+            },
+            {
+              movieName: 'Aliens',
+              releaseYear: 1986,
+              directedBy: 'Cameron',
+              runningTimeInMinutes: 137,
+            },
+            {
+              movieName: 'Men in Black',
+              releaseYear: 1997,
+              directedBy: 'Sonnenfeld',
+              runningTimeInMinutes: 98,
+            },
+            {
+              movieName: 'Predator',
+              releaseYear: 1987,
+              directedBy: 'McTiernan',
+              runningTimeInMinutes: 107,
+            },
+          ];
+          
+          console.log(movies.sort(byProperty('releaseYear', '>'))); 
+          // виведе масив фільмів посортованих по року випуску, від старішого до новішого
+          console.log(movies.sort(byProperty('runningTimeInMinutes', '<'))); 
+          // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого
+          console.log(movies.sort(byProperty('movieName', '>'))); 
+          // виведе масив фільмів посортованих по назві, в алфавітному порядку
+          
+          function byProperty(property, direction) {
+            // тут ваш код
+          }
+          </pre>
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-3" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <button onclick="RunThirdTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-3" cols="65" rows="15" disabled style="resize:   none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>4</h2>
+      <div>
+        <h4>Напишіть функцію яка відфільтрує масив унікальних значень</h4>
+        <p>Рішення має працювати незалежно від конкретних значень в масиві імен
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+            const userNames = ['Петро', 'Емма', 'Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена', 'Емма'];
+
+            function filterUnique(array) {
+            // тут ваш код 
+            }
+
+            console.log(filterUnique(userNames)); // ['Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+          </pre>
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-4" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <button onclick="RunFourthTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-4" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
