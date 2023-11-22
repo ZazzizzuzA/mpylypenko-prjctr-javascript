@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW7 — Планування виконання, методи об'єктів, контекст виконання, методи call та apply
+  </title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW7 — Планування виконання, методи об'єктів, контекст виконання, методи call та apply</h1>
+    <div>
+      <h2>1</h2>
+      <div>
+        <h4>Напишіть функцію <span style="font-style: italic;">detonatorTimer(delay)</span> використовуючи <span
+            style="font-style: italic;">setInterval</span> </h4>
+        <p>Вона виводить в консоль число кожну секунду, починаючи з delay (ціле число) і в кінці замість 0 виведе
+          'BOOM!'.
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          detonatorTimer(3);
+          // 3
+          // 2
+          // 1
+          // BOOM!</pre>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-1" cols="65" rows="13" disabled style="resize: auto;"></textarea>
+          <button onclick="RunFirstTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-1" cols="65" rows="13" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>2</h2>
+      <div>
+        <h4>Напишіть функцію detonatorTimer(delay) використовуючи вкладений setTimeout</h4>
+        <p>Вона виводить в консоль число кожну секунду, починаючи з delay (ціле число) і в кінці замість 0 виведе
+          'BOOM!'
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          detonatorTimer(3);
+          // 3
+          // 2
+          // 1
+          // BOOM!
+          </pre>
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-2" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <button onclick="RunSecondTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>3</h2>
+      <div>
+        <h4>Напишіть об'єкт в якому опишіть свої довільні властивості та довільні методи що ці властивості виводять.
+        </h4>
+        <p>Можете описати скільки хочете властивостей і не менше 2 методів.
+          Не соромтесь)
+          Наприклад:
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          let me = {
+            name: 'Mykola',
+            residency: 'Lviv',
+            gender: 'male',
+            age: 31,
+            hobby: 'crafting',
+            defaultMood: 'focused',
+            currentMood: 'sleepy',
+            introduce() {
+              console.log(`My name is ${this.name} and I live in ${this.residency}`);
+            },
+            prognose() {
+              console.log(`I hope that next year I'm gonna be ${this.age+1}`);
+            },
+            describeMyMood(){
+              console.log(`Mostly I'm ${this.defaultMood}, but now I'm ${this.currentMood}`);
+            }
+          }
+          
+          me.introduce();
+          me.prognose();
+          me.describeMyMood();
+          </pre>
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-3" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <div style="display: flex; flex-flow: row wrap; max-width: 500px; justify-content: space-between;">
+            <button onclick="RunThirdTask(true)"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get ALL</span></button>
+            <button onclick="RunThirdTask(true, 'getName')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get Name</span></button>
+            <button onclick="RunThirdTask(true, 'getAmountOfEyes')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get amount of eyes</span></button>
+            <button onclick="RunThirdTask(true, 'getIdea')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get Idea</span></button>
+            <button onclick="RunThirdTask(true, 'thoughts')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get thouths</span></button>
+            <button onclick="RunThirdTask(true, 'describeMyMood')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get description of mood</span></button>
+            <button onclick="RunThirdTask(true, 'prognose')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get prognose</span></button>
+            <button onclick="RunThirdTask(true, 'introduce')"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 30px;"><span
+                style="font-weight: 600;">Get introduce</span></button>
+          </div>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-3" cols="65" rows="15" disabled style="resize:   none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>4</h2>
+      <div>
+        <h4>А тепер зробіть всі свої методи з попередньої задачі прив'язаними до контексту свого об'єкту</h4>
+        <p>Аби вони були захищені від перезапису об'єкту і їх можна було викликати в таймері:
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          let securedSelfIntroduce = // якийсь код
+          let securedSelfPrognose = // якийсь код
+          let securedSelfDescribeMyMood = *// якийсь код
+          
+          setTimeout(securedSelfIntroduce, 1000); // виведе коректний результат
+          setTimeout(securedSelfPrognose, 2000); // виведе коректний результат
+          setTimeout(securedSelfDescribeMyMood, 3000); // виведе коректний результат
+          </pre>
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-4" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <button onclick="RunFourthTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-4" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>5</h2>
+      <div>
+        <h4>Напишіть функцію-декоратор яка вповільнює виконання довільної функції на вказану кількість секунд.</h4>
+        <p>
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          function someFunction // тут напишіть довільну функцію яка робить якусь роботу зі своїми аргументами та виводить результат в консоль
+
+          function slower(func, seconds) {
+          // тут ваш код для декоратора
+          }
+          
+          let slowedSomeFunction = slower(someFunction, 5); // обгортаєте свою довільну функцію 'someFunction' в декоратор і задає значення вповільнення
+          
+          slowedSomeFunction(/*якісь аргументи*/) // викликаєте декоратор
+          
+          // виведе в консоль "Chill out, you will get you result in 5 seconds
+          //...через 5 секунд виведе результат роботи 'someFunction'
+          </pre>
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div style="display: flex; flex-flow: column;">
+          <h4>Код</h4>
+          <textarea name="code" id="area-code-5" cols="65" rows="15" disabled style="resize: auto;"></textarea>
+          <button onclick="RunFifthTask(true)"
+            style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+              style="font-weight: 600;">RUN</span></button>
+        </div>
+        <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+        <div>
+          <h4>Результат</h4>
+          <textarea name="result" id="area-result-5" cols="65" rows="15" disabled style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
