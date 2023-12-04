@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW9 — Основи роботи з DOM. Атрибути, властивості, події</title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW9 — Основи роботи з DOM. Атрибути, властивості, події</h1>
+    <div>
+      <h2>1</h2>
+      <div>
+        <h4>Задача на обробники подій, роботу зі сховищами та атрибутами/вмістом</h4>
+        <p><ul>
+          <li>Напишіть html код який містить кнопку якраз посередині (вертикально і горизонтально) сторінки.</li>
+          <li>В початковому стані — на кнопці має бути текст 'Turn off', фон сторінки має стати світлий.</li>
+          <li>Після натиснення — на кнопці має бути текст 'Turn on', фон сторінки має стати темний. Під кнопкою має з'явитись текстове повідомлення 'Last turn off: {DD-MM-YYYY HH:MM:SS}', де {DD-MM-YYYY HH:MM:SS} - це формат часу для виведення</li>
+          <li>Після повторного натиснення - на кнопці має бути текст 'Turn off', фон сторінки має стати світлий.</li>
+          <li>Під кнопкою має з'явитись текстове повідомлення 'Last turn on: {DD-MM-YYYY HH:MM:SS}', де {DD-MM-YYYY HH:MM:SS} - це формат часу для виведення</li>
+          <li>Стан кнопки та повідомлення останню зміну стану має зберігатись після перезавантаження/закриття сторінки.</li>
+          <li>Логіку роботи реалізуйте в окремому js-файлі.</li>
+        </ul>
+        * Тут відображено через айфрем. Подивитись напряму можна тут: лінк
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div>
+          <h4>Результат</h4>
+          <!-- <textarea name="result" id="area-result-1" cols="150" rows="15" disabled style="resize: none;"></textarea> -->
+          <iframe srcdoc='<!DOCTYPE html>
+            <html lang="en">
+            
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Button</title>
+              <style>
+                body {
+                  margin: 0; 
+                  height: 100vh; 
+                  display: flex; 
+                  align-items: center; 
+                  justify-content: center; 
+                  transition: all 500ms ease-out 100ms;
+                }
+            
+                .turn-off-bg {
+                  background-color: rgba(120,8,245,1);
+                }
+                .turn-on-bg {
+                  background-color: rgba(120,8,245,.3);
+                }
+              </style>
+            </head>
+            
+            <body class="turn-on-bg">
+              <div style="text-align: center;">
+                <button style="height: 4em; width: 10em">Turn off</button>
+                <p style="height: 20px"><span id="lastOutputDate"></span></p>
+              </div>
+              <script src="./button.js"></script>
+            </body>
+            
+            </html>' frameborder="0" style="width: 90vw; height: 600px;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
