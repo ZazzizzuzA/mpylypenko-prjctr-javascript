@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW10 — Практичне завдання на основі додатку створеного під час воркшопу "ToDoList app"
+  </title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW10 — Практичне завдання на основі додатку створеного під час воркшопу "ToDoList app"</h1>
+    <div>
+      <!-- <h2>1</h2> -->
+      <div>
+        <h4>Виправити помилку з видаленням завдання</h4>
+        <p>Наразі у програми є проблема з видаленням окремих елементів, якщо у списку є завдання з однаковими текстами.
+
+          Наприклад, у вас є наступний список завдань:
+        <ul>
+          <li>Поїсти</li>
+          <li>Поспати</li>
+          <li>Сходити в зал</li>
+          <li>Поїсти</li>
+          <li>Поспати</li>
+          <li>Сходити в офіс</li>
+          <li>Поїсти</li>
+          <li>Поспати</li>
+          <li>Піти додому</li>
+        </ul>
+        Якщо юзер видалить друге завдання 'Поїсти' (яке йде після 'Сходити в зал'), то на сторінці все видалиться
+        коректно, проте у локалСтораджі видаляться всі завдання 'Поїсти'.
+
+        Зробіть так, аби функціонал видалення працював коректно — тобто аби при видалені на сторінці з локалСтораджу
+        видалявся саме той елемент який видалив юзер, а не якісь ще крім нього.
+
+        Для цього можете використати кастомні атрибути
+        (<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset</a>) і/або індекс елементу і методи масивів та
+        приведення до масивів
+
+        </p>
+
+      </div>
+      <div>
+        <h4>Додати можливість оновлювати окреме завдання</h4>
+        <p>Зробіть так аби юзер крім видалення окремого елементу мав ще й можливість редагувати текст окремого завдання.
+
+          Для цього можете додати іконку з олівцем поруч з іконкою для видалення.
+
+          Приклад елементу:
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+            <\i class="fa fa-edit"><\/i\></pre>
+        Для самого функціоналу можете використати вбудоване діалогове вікно
+        (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt</a>), а також індекс елементу і методи масивів та
+        приведення до масивів
+        </p>
+
+      </div>
+      <div>
+        <h4>Додати всій сторінці стилів</h4>
+        <p>Додайте сторінці візуальної унікальності через css класи</p>
+
+      </div>
+      <div>
+        <h4>Розмістити на гітхаб-сторінці</h4>
+        <p>Зробіть так аби був доступ до сторінки через інтернет для всіх охочих</p>
+        <p>*Зроблено в айфреймі нижче. Можна ознайомитись за <a href="https://zazzizzuza.github.io/mpylypenko-prjctr-javascript/10/todolist.html">прямим посиланням</a></p>
+
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div>
+          <h4>Результат</h4>
+          <!-- <textarea name="result" id="area-result-1" cols="150" rows="15" disabled style="resize: none;"></textarea> -->
+          <iframe srcdoc='<!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="./styles.css" />
+                <title>Список завдань</title>
+              </head>
+              <body>
+                <div class="container">
+                  <div class="create-task-block">
+                    <form class="create-task-form" data-id="test">
+                      <h3 class="task-title">Нове завдання</h3>
+                      <div class="input-field">
+                        <input type="text" name="task" class="task-input" />
+                      </div>
+                      <button type="submit" class="btn">Додати завдання</button>
+                    </form>
+                  </div>
+            
+                  <div class="filter-task-block">
+                    <h3 class="task-title">Список завдань</h3>
+                    <div class="input-field">
+                      <input
+                        type="text"
+                        name="filter"
+                        class="filter-input"
+                        placeholder="Пошук завдань"
+                      />
+                    </div>
+                    <ul class="collection"></ul>
+                    <button class="clear-tasks">Видалити всі завдання</button>
+                  </div>
+                </div>
+                <script src="./app.js"></script>
+              </body>
+            </html>' frameborder="0" style="width: 90vw; height: 600px;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
