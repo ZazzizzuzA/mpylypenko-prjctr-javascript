@@ -64,7 +64,12 @@ function SetFormatedDateOfOutput(status) {
   if (status === 'on') {
     span.textContent = 'Last turn on: ' + date;
   }
-  saveToStorage('turn_message', span.textContent);
+
+  let dataToStorage = {
+    status,
+    message: span.textContent
+  }
+  saveToStorage('turn_message', JSON.stringify(dataToStorage));
 }
 
 function saveToStorage(name, date) {
@@ -72,21 +77,48 @@ function saveToStorage(name, date) {
 }
 
 function getFromStorage(name) {
-  let storageData = localStorage.getItem(name);
+  try {
+    let storageData = localStorage.getItem(name);
 
-  if (!storageData) {
-    return '';
+    if (!storageData) {
+      return {
+        status: 'on',
+        message: 'Didn\'t use for now'
+      };
+    }
+  
+    return JSON.parse(storageData);
+  } catch(err) {
+    return {
+      status: 'on',
+      message: 'Didn\'t use for now'
+    };
   }
 
-  return storageData;
 }
 
-function setDateToSpan() {
+function setDateToSpan(storageData) {
   let span = GetSpan();
-  let storageData = getFromStorage('turn_message');
-  span.textContent = storageData;
+  span.textContent = storageData.message;
 }
 
-setDateToSpan();
+function setLastCondition() {
+  let storageData = getFromStorage('turn_message');
+  const body = document.body;
+  button.setAttribute('turn', storageData.status);
+  if (storageData.status === 'off') {
+    button.textContent = 'Turn on';
+    body.classList.remove('turn-on-bg');
+    body.classList.add('turn-off-bg');    
+  }
+  if (storageData.status === 'on') {
+    button.textContent = 'Turn off';
+    body.classList.remove('turn-off-bg');
+    body.classList.add('turn-on-bg');    
+  }
+  setDateToSpan(storageData)
+}
+
+setLastCondition();
 
 AddListenerOnClick(button, callbackForClick);
