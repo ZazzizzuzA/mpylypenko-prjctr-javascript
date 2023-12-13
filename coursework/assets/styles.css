@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: rgba(127, 255, 212, 0.541);
+}
+
+ul {
+  margin-top: 0;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+#form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.form-wrapper {
+  padding: 10px 15px;
+  box-shadow: 0px 2px 4px 1px lightseagreen;
+  border-radius: 4px;
+  flex-basis: 30%;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.input-wrapper__input {
+  margin: 0 5px;
+}
+
+.button-wrapper {
+  padding: 3px 5px;
+}
+
+.title {
+  display: block;
+  flex-basis: 30%;
+}

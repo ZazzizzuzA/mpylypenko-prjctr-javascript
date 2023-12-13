@@ -35,6 +35,9 @@ Repositry for homeworks from Projector's courses
 			<a class="link" target="_blank" href="10" style="line-height: 0.5; margin: 10px 0px 0px 10px; border-radius: 3px; padding: 15px 20px; background: rgb(30, 224, 255, 0.65); text-decoration: none; border: 1px solid rgba(190,200,190,0.7); box-shadow: 2px 3px 5px rgb(20,20,20); color: #030147;">
 				<p style="margin:0; line-height: 100%;">10. Практичне завдання на основі додатку створеного під час воркшопу "ToDoList app"</p>
 			</a>
+			<a class="link" target="_blank" href="11" style="line-height: 0.5; margin: 10px 0px 0px 10px; border-radius: 3px; padding: 15px 20px; background: rgb(30, 224, 255, 0.65); text-decoration: none; border: 1px solid rgba(190,200,190,0.7); box-shadow: 2px 3px 5px rgb(20,20,20); color: #030147;">
+				<p style="margin:0; line-height: 100%;">11. ООП в JS - основні поняття, класи</p>
+			</a>
 		</div>
 	</div>
 </body>

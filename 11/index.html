@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW11 — ООП в JS - основні поняття, класи</title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW11 — ООП в JS - основні поняття, класи</h1>
+    <div>
+      <!-- <h2>1</h2> -->
+      <div>
+        <h4>Реалізуйте наступну систему, схожу до розглянутої на вебінарі:</h4>
+        <p>
+        <ul style="list-style: decimal;">
+          <li>чотири класи для створення об'єктів-сутностей (це можуть бути тварини, покемони, раси і т.д. - проявіть
+            фантазію)</li>
+          <li>у кожного класу має бути мінімум 3 властивості та мінімум 3 методи(але можна й більше)</li>
+          <li>у кожного класу має бути своя унікальна властивість</li>
+          <li>у кожного класу має бути приватна властивість</li>
+          <li>у двох класів має бути спільний предок та спільний метод характерний тільки для них</li>
+          <li>у всіх чотирьох класів має бути один (крім проміжних) клас-предок</li>
+        </ul>
+        <!-- * Тут відображено через айфрем. Подивитись напряму можна тут: <a
+          href="https://zazzizzuza.github.io/mpylypenko-prjctr-javascript/09/button">Посилання</a> -->
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+        <div>
+          <h4>Результат</h4>
+          <div style="display: flex; flex-flow: row wrap; max-width: 500px; justify-content: space-between;">
+            <button onclick="RaceAPI.createElf()"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 10px;"><span
+                style="font-weight: 600;">Create Elf</span></button>
+            <button onclick="RaceAPI.operations.saySomethingOnElfish()"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 10px;"><span
+                style="font-weight: 600;">Elf will translate on elfish</span></button>
+            <button onclick="RaceAPI.operations.getCurrentAgeOfElf()"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 10px;"><span
+                style="font-weight: 600;">Show how old is elf</span></button>
+            <button onclick="RaceAPI.operations.giveWeaponToElf()"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 10px;"><span
+                style="font-weight: 600;">Give him a weapon</span></button>
+            <button onclick="RaceAPI.operations.hitAnElf()"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 10px;"><span
+                style="font-weight: 600;">Hit the elf</span></button>
+            <button onclick="RaceAPI.operations.elfHitYou()"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 10px;"><span
+                style="font-weight: 600;">Elf hits you</span></button>
+          </div>
+          <textarea name="code" id="area-code-1" cols="150" rows="50" disabled
+            style="resize: none; margin-top: 10px;"></textarea>
+          <!-- <iframe srcdoc='' frameborder="0" style="width: 90vw; height: 600px;"></iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
