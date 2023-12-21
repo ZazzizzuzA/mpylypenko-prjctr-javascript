@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pylypenko Mykhailo | HW12 — Проміси</title>
+</head>
+
+<body>
+  <div style="max-width: 1150px;">
+    <h1>HW12 — Проміси</h1>
+    <div>
+      <h2>1</h2>
+      <div>
+        <h4>Є наступний код:</h4>
+        <p>
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          console.log('start');
+
+          const promise1 = new Promise((resolve, reject) => {
+          console.log(1)
+          resolve(2)
+          })
+
+          promise1.then(res => {
+          console.log(res)
+          })
+
+          console.log('end');
+        </pre>
+        Яким буде результат його виклику? Чому? Опишіть як працює цей код.
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+
+          <div style="display: flex; flex-flow: column;">
+            <h4>Код</h4>
+            <textarea name="code" id="area-code-1" cols="65" rows="15" disabled style="resize: none;"></textarea>
+            <button onclick="RunFirstTask(true)"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+                style="font-weight: 600;">RUN</span></button>
+          </div>
+          <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+          <div>
+            <h4>Результат</h4>
+            <textarea name="result" id="area-result-1" cols="65" rows="15" disabled
+              style="resize: none;"></textarea>
+          </div>
+  
+      </div>
+      <div>
+        <h4>Відповідь</h4>
+        <p style="font-style: italic;">
+          <span style="font-weight: 600;">Результат</span><br>
+          'start' -> 1 -> 'end' -> 2 <br>
+          <span style="font-weight: 600;">Чому?</span><br>
+          Причиною такої, на перший погляд, не послідовної поведінки у результаті, є використання промісу. Метод "then" є мікротаскою, яка потрапляє в глобальнийцикл подій і буде виконаний в наступних ітераціях, коли до нього дійде черга. <br>
+          <span style="font-weight: 600;">Як працює цей код?</span><br>
+          Виконання коду починається з console.log('start') -> далі створюється проміс з колбеком, який виконується одразу, і ми бачимо в консолі "1" -> наступним записом ми передаємо колбек функцію для метода "then", який додає її в чергу мікрозадач для подальшого опрацювання даних, що були отриманні в колбеці самого промісу завдяки методу "resolve" -> далі: "console.log('end')" -> запуск функції з черги мікрозадач, яку ми передали, і бачимо в консолі: 2.
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2>2</h2>
+      <div>
+        <h4>Є наступний код:</h4>
+        <p>
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          Promise.resolve(1)
+          .then((x) => x + 1)
+          .then((x) => { throw new Error('My Error') })
+          .catch(() => 1)
+          .then((x) => x + 1)
+          .then((x) => console.log(x))
+          .catch(console.error)
+        </pre>
+        Яким буде результат його виклику? Чому? Опишіть як працює цей код.
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+
+          <div style="display: flex; flex-flow: column;">
+            <h4>Код</h4>
+            <textarea name="code" id="area-code-2" cols="65" rows="15" disabled style="resize: none;"></textarea>
+            <button onclick="RunSecondTask(true)"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+                style="font-weight: 600;">RUN</span></button>
+          </div>
+          <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+          <div>
+            <h4>Результат</h4>
+            <textarea name="result" id="area-result-2" cols="65" rows="15" disabled
+              style="resize: none;"></textarea>
+          </div>
+  
+      </div>
+      <div>
+        <h4>Відповідь</h4>
+        <p style="font-style: italic;">
+          <span style="font-weight: 600;">Результат</span><br>
+          2<br>
+          <span style="font-weight: 600;">Чому?</span><br>
+          Виводить "2", бо в другому методі "then" викидаємо помилку, яка обробляється першим методом "catch", який міняє значення для подальшої обробки на "1". Згідно наступних операцій результатом буде "2".<br>
+          <span style="font-weight: 600;">Як працює цей код?</span><br>
+          По-кроково процес описаний в полі "Результат".
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2>3</h2>
+      <div>
+        <h4>Є наступний код:</h4>
+        <p>
+        <pre style="background-color: rgba(123, 205, 235, 0.25); padding: 10px 0">
+          const promise = new Promise(res => res(2));
+          promise.then(v => {
+                  console.log(v);
+                  return v * 2;
+              })
+              .then(v => {
+                  console.log(v);
+                  return v * 2;
+              })
+              .finally(v => {
+                  console.log(v);
+                  return v * 2;
+              })
+              .then(v => {
+                  console.log(v);
+              });
+        </pre>
+        Яким буде результат його виклику? Чому? Опишіть як працює цей код.
+        </p>
+      </div>
+      <div style="display: flex; flex-flow: row; justify-content: space-between;">
+
+          <div style="display: flex; flex-flow: column;">
+            <h4>Код</h4>
+            <textarea name="code" id="area-code-3" cols="65" rows="15" disabled style="resize: none;"></textarea>
+            <button onclick="RunThirdTask(true)"
+              style="display: flex; justify-content: center; width: 80px; margin-top: 15px; padding: 8px 50px;"><span
+                style="font-weight: 600;">RUN</span></button>
+          </div>
+          <div style="border-left: 1px groove rgba(62, 125, 147, 0.4); min-height: 100%"></div>
+          <div>
+            <h4>Результат</h4>
+            <textarea name="result" id="area-result-3" cols="65" rows="15" disabled
+              style="resize: none;"></textarea>
+          </div>
+  
+      </div>
+      <div>
+        <h4>Відповідь</h4>
+        <p style="font-style: italic;">
+          <span style="font-weight: 600;">Результат</span><br>
+          2 -> 4 -> undefined -> 8 <br>
+          <span style="font-weight: 600;">Чому?</span><br>
+          Бо метод "finally" виконується згідно написанної послідовності, не приймає в себе аргументів та не повертає даних для подальших методів "then" ланцюга<br>
+          <span style="font-weight: 600;">Як працює цей код?</span><br>
+          По-кроково процес описаний в полі "Результат".
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
