@@ -1,3 +1,5 @@
+@import './table.css';
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -8,29 +10,56 @@ ul {
   margin-top: 0;
 }
 
+#contentFormResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  transition: all 400ms ease-in-out 50ms;
+}
+
+#contentTable {
+  transition: all 400ms ease-in-out 50ms;
+}
+
 #content {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: column wrap;
+  padding: 2rem 1rem;
 }
 
 #form {
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
+  align-items: start;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .form-wrapper {
-  padding: 10px 15px;
-  box-shadow: 0px 2px 4px 1px lightseagreen;
-  border-radius: 4px;
-  flex-basis: 30%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-wrapper > .first-row {
+  flex-basis: 50%;
+}
+
+.form-wrapper > .second-row {
+  flex-basis: 50%;
+  margin-bottom: 10px;
 }
 
 .input-wrapper {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: start;
 }
 
 .input-wrapper__input {
@@ -38,10 +67,64 @@ ul {
 }
 
 .button-wrapper {
+  flex-basis: 100%;
   padding: 3px 5px;
 }
 
 .title {
   display: block;
   flex-basis: 30%;
+}
+
+.menu-wrapper {
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+.menu-wrapper > button {
+  border: 0px;
+  width: 7rem;
+  height: 2rem;
+  box-shadow: 1px 1px 1px rgb(20, 39, 58);
+  margin: 3px;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.first-tab {
+  max-width: 60rem;
+  width: 75%;
+}
+
+.inputs {
+  padding: 5px 0px;
+}
+
+.result-wrapper {
+  flex-basis: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 10px 15px;
+  box-shadow: 0px 2px 4px 1px lightseagreen;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+h3 {
+  margin: 0;
+}
+
+.result-wrapper > h3 {
+  text-align: right;
 }

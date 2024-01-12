@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <title>Course project | Date detector</title>
 </head>
 
@@ -12,18 +14,22 @@
   <div id="root">
     <header>
       <nav class="menu">
-        <ul>
-          <li><button >Tab #1</button></li>
-          <li><button href="#">Tab #2</button></li>
-        </ul>
+        <div class="menu-wrapper">
+          <button id="firstTabButton">Tab #1</button>
+          <button id="secondTabButton">Tab #2</button>
+        </div>   
       </nav>
     </header>
-    <div id="content">
+    <div id="content" >
+      <div id="contentFormResult" class="out hide">
+        
+      </div>
+      <div id="contentTable" class="out hide">
 
+      </div>
     </div>
   </div>
-  <script nonce src="./src/firstTab.js"></script>
-  <script nonce src="./src/app.js"></script>
+  <script type="module" src="./src/app.js"></script>
 </body>
 
 </html>
