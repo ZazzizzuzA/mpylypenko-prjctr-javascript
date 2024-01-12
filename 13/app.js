@@ -17,6 +17,7 @@ class GitHubController {
   async handleSearchInput(inputValue) {
     if (!inputValue.trim()) {
       this.ui.clearProfile();
+      this.ui.clearRepos();
       return;
     }
 
@@ -140,6 +141,11 @@ class UI {
 
   clearProfile() {
     this.profile.innerHTML = '';
+  }
+
+  clearRepos() {
+    this.reposContainer.innerHTML = '';
+    this.reposContainer.parentElement.style.visibility = 'hidden';
   }
 
   showAlert(message, className) {
