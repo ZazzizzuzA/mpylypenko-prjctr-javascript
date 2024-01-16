@@ -1,9 +1,12 @@
+
 @import './table.css';
+@import './button.css';
+@import './inputs.css';
 
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: rgba(127, 255, 212, 0.541);
+  background-color: rgba(155, 71, 163, 0.76);
 }
 
 ul {
@@ -47,7 +50,12 @@ ul {
   width: 100%;
 }
 
-.form-wrapper > .first-row {
+.first-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form-wrapper .first-row-cell {
   flex-basis: 50%;
 }
 
@@ -58,17 +66,27 @@ ul {
 
 .input-wrapper {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
   justify-content: start;
 }
 
 .input-wrapper__input {
   margin: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.input-wrapper__input > div {
+  display: flex;
+  align-items: center;
 }
 
 .button-wrapper {
   flex-basis: 100%;
   padding: 3px 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
@@ -104,10 +122,6 @@ ul {
   width: 75%;
 }
 
-.inputs {
-  padding: 5px 0px;
-}
-
 .result-wrapper {
   flex-basis: 100%;
 }
@@ -116,7 +130,7 @@ ul {
   display: flex;
   flex-flow: row nowrap;
   padding: 10px 15px;
-  box-shadow: 0px 2px 4px 1px lightseagreen;
+  box-shadow: 0px 0px 5000px 1px rgba(32, 120, 178, 0.678);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -127,4 +141,34 @@ h3 {
 
 .result-wrapper > h3 {
   text-align: right;
+}
+
+.second-tab .form-wrapper > .first-row {
+  flex-basis: 100%;
+  margin-bottom: 15px;
+}
+
+.second-tab .form-wrapper > .second-row {
+  flex-basis: 100%;
+}
+
+.second-tab .form-wrapper > .first-row .input-wrapper__input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.second-tab .form-wrapper > .first-row .input-wrapper__input input {
+  margin-top: 5px;
+}
+
+.second-tab .form-wrapper .input-wrapper {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.presets-wrapper {
+  display: flex;
+  flex-flow: column wrap;
 }

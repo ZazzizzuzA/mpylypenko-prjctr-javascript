@@ -115,7 +115,7 @@ export default function() {
   };
   
   
-  createResizableTable(document.getElementById('resizeMe'));
+  createResizableTable(document.getElementById('resultTable'));
   // });
   
   
