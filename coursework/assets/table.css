@@ -16,11 +16,11 @@
 
 .table th {
   position: relative;
-   cursor: grab;
+   cursor: pointer;
       user-select: none;
 }   
    .table th:active {
-      cursor: grabbing;
+      cursor: pointer;
     }
 
 .resizer {

@@ -10,6 +10,9 @@ export default function() {
     }
 
     savedData.push(data);
+    if (savedData.length > 10) {
+      savedData.splice(0, savedData.length - 10);
+    }
     let newData = JSON.stringify(savedData)
     localStorage.setItem(name, newData);    
   }

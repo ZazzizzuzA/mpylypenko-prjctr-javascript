@@ -6,7 +6,7 @@ export default `
     <table id="resultTable" class="resizable-table table table-hover">
       <thead>
         <tr id="header-row">
-          <th class="draggable-table" data-column="0">Дата</th>
+          <th class="draggable-table" id="columnToSort" data-column="0" data-sorted="desc"><span style='font-size: 18px;'>&#8679;</span>  Дата</th>
           <th class="draggable-table" data-column="1">Назва свята</th>
         </tr>
       </thead>
