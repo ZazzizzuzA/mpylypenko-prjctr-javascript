@@ -27,9 +27,7 @@ export default function () {
   }
 
   async function getHolidays(country, year) {
-    if (holidays) {
-      return holidays;
-    }
+
     try {
       let response = await fetch(`${urlHolidays}?api_key=${API_KEY}&country=${country}&year=${year}`);
 
