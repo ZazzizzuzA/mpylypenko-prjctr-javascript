@@ -73,7 +73,7 @@ export default `
                     </div>
                   </div>
                   <div class="button-wrapper">
-                    <button id="btnSubmit" class="button-wrapper__button btn btn-intermediate">Get info</button>
+                    <button id="btnSubmit" class="button-wrapper__button btn btn-intermediate">Розрахувати</button>
                   </div>
                 </div>
               </form>

@@ -23,10 +23,15 @@ export default function() {
     return JSON.parse(localStorage.getItem(name));
   }
 
+  function clearLocalStorage(tabId) {
+    let savedData = getDataFromStorage(tabId);
+  }
+
 
   return {
     saveToStorage,
     getName,
-    getDataFromStorage
+    getDataFromStorage,
+    clearLocalStorage
   }
 }

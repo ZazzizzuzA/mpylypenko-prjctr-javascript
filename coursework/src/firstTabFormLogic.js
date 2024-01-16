@@ -17,18 +17,22 @@ export default function(form) {
   function formatInputValuesToDate() {
     const startDate = new Date(startDateValue);
     const endDate = new Date(endDateValue);
-    const dayInMS = new Date(Date.UTC(1970, 0, 2)).getTime();
+    const startDateTime = startDate.getTime();
+    const endDateTime = endDate.getTime();
+    // const dayInMS = new Date(Date.UTC(1970, 0, 2)).getTime();
+    
     return {
       options: {
         whatToCount: whatCountValue,
-        howToCount: howToCountValue
+        howToCount: howToCountValue,
+        equal: startDateTime === endDateTime
       },
       startDateValues: {
-        time: startDate.getTime(),
+        time: startDateTime,
         dateObj: startDate
       },
       endDateValues: {
-        time: endDate.getTime(),
+        time: endDateTime,
         dateObj: endDate,
       }
     }
@@ -46,7 +50,7 @@ export default function(form) {
         return {
           startDate: startDate,
           endDate: endDate,
-          result: dates.length - 1,
+          result: dates.length,
           whatCounted: whatToCount,
           howCounted: howToCount
         };
@@ -58,7 +62,7 @@ export default function(form) {
         return {
           startDate: startDate,
           endDate: endDate,
-          result: resultSeconds - secondsInDay,
+          result: resultSeconds,
           whatCounted: whatToCount,
           howCounted: howToCount
         };
@@ -69,7 +73,7 @@ export default function(form) {
         return {
           startDate: startDate,
           endDate: endDate,
-          result: minuteInDay * (dates.length - 1),
+          result: minuteInDay * (dates.length),
           whatCounted: whatToCount,
           howCounted: howToCount
         };
@@ -80,7 +84,7 @@ export default function(form) {
         return {
           startDate: startDate,
           endDate: endDate,
-          result: hourInDay * (dates.length - 1),
+          result: hourInDay * (dates.length),
           whatCounted: whatToCount,
           howCounted: howToCount
         };
@@ -92,22 +96,31 @@ export default function(form) {
   function GetDaysArray(datesObj) {
     const type = datesObj.options.whatToCount;
     const dayInMS = new Date(Date.UTC(1970, 0, 2)).getTime();
-    const allDays = parseInt(((datesObj.endDateValues.time - datesObj.startDateValues.time) / dayInMS).toFixed());
+    let allDays = parseInt(((datesObj.endDateValues.time - datesObj.startDateValues.time) / dayInMS).toFixed());
     let arrDays = allDays > 0 ? new Array(allDays) : new Array(allDays * -1);
     let start = allDays > 0 ? datesObj.startDateValues.dateObj : datesObj.endDateValues.dateObj;
-    arrDays[0] = start;
+    let end = allDays > 0 ? datesObj.endDateValues.dateObj : datesObj.startDateValues.dateObj;
 
+    allDays = allDays < 0 ? allDays * -1: allDays;
+    arrDays[0] = start;
+    if (!datesObj.options.equal) {
+      arrDays[arrDays.length] = end;
+    }
+    
     let tempDate = start;
-    for (let i = 0; i < allDays + 1; i++) {
+
+    for (let i = 0; i < allDays ; i++) {
       let date = arrDays[i];
-      if (!!date) {
+     
+      if (date) {
         continue;
       }
-
+     
       tempDate = new Date(tempDate.getTime() + dayInMS);
       arrDays[i] = tempDate;
     }
-
+    
+    
     datesObj.filteredDays = arrDays;
 
     if (type === 'all') {
