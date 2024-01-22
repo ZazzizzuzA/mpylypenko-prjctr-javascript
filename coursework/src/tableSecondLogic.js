@@ -1,7 +1,5 @@
 export default function() {
 
-  let allData = null;
-
   function GetTable() {
     return document.querySelector('#resultTable');
   }
